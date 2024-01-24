@@ -12,12 +12,17 @@ export default function Comp3() {
 
 export const Comp4 = () => <h2>Comp #04</h2>
 
-export const Comp5 = () => {
+const Comp5 = () => {
     return <h2>Comp #05</h2>
 }
 
-export const Comp6 = props => (
+const Comp6 = props => (
     <div>
         <h2>Comp #06 - {props.mensagem} </h2>
     </div>
 )
+
+export {
+    Comp5,
+    Comp6,
+}
