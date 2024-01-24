@@ -10,20 +10,19 @@ export default function megasena() {
     return (
         <div style={{
             display: 'flex',
-            justifyContent: 'center',
-            alignContent: 'center',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            alignItems: 'center'
         }}>
             <h1>Gerador de Números para Mega Sena</h1>
             <div style={{
                 display: 'flex',
-                justifyContent: 'center',
+                justifyItens: 'center',
                 alignContent: 'center',
             }}>
                 {numeros.map(numero => <NumeroDisplay valor={numero} />)}
             </div>
             <div>
-                <input type="number" max={15} min={5} onChange={e => setQuantidade(e.target.value)} value={quantidade}/>
+                <input type="number" max={15} min={5} onChange={e => setQuantidade(e.target.value)} value={quantidade} />
                 <button onClick={() => setNumeros(gerarNumerosAleatorios(quantidade))}>Gerar</button>
             </div>
         </div>
