@@ -16,8 +16,8 @@ export default function megasena() {
             <h1>Gerador de Números para Mega Sena</h1>
             <div style={{
                 display: 'flex',
-                justifyItens: 'center',
-                alignContent: 'center',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
             }}>
                 {numeros.map(numero => <NumeroDisplay valor={numero} />)}
             </div>
