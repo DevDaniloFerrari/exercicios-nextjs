@@ -7,5 +7,5 @@ export default function gerarNumerosAleatorios(quantidade) {
             numeros.push(novoNumero)
     }
 
-    return numeros
+    return numeros.sort((n1, n2) => n1 - n2)
 } 
