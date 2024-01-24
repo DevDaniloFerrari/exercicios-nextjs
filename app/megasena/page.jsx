@@ -1,11 +1,15 @@
 'use client'
 import NumeroDisplay from "@/components/NumeroDisplay"
 import gerarNumerosAleatorios from "../../functions/numerosAleatorios"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function megasena() {
-    const [quantidade, setQuantidade] = useState(1)
+    const [quantidade, setQuantidade] = useState(5)
     const [numeros, setNumeros] = useState([])
+
+    useEffect(() => {
+        setNumeros(gerarNumerosAleatorios(quantidade))
+    }, [])
 
     return (
         <div style={{
@@ -19,10 +23,10 @@ export default function megasena() {
                 justifyContent: 'center',
                 flexWrap: 'wrap',
             }}>
-                {numeros.map(numero => <NumeroDisplay valor={numero} />)}
+                {numeros.map(numero => <NumeroDisplay key={numero} valor={numero} />)}
             </div>
             <div>
-                <input type="number" max={15} min={5} onChange={e => setQuantidade(e.target.value)} value={quantidade} />
+                <input type="number" min={5} max={15} onChange={e => setQuantidade(e.target.value)} value={quantidade} />
                 <button onClick={() => setNumeros(gerarNumerosAleatorios(quantidade))}>Gerar</button>
             </div>
         </div>
