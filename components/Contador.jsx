@@ -10,9 +10,7 @@ export default class Contador extends Component {
             passo: props.passo ?? 1
         }
     }
-
     
-
     incrementar = () => {
         this.setState({
             numero: this.state.numero + (this.state.passo ?? 1)
